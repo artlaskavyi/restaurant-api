@@ -3,6 +3,7 @@ package com.restaurant.API;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/orders")
 public class OrderController {
 
     private final OrderService orderService;
@@ -11,8 +12,8 @@ public class OrderController {
         this.orderService = orderService;
     }
     @GetMapping("/{orderId}")
-    public Order getOrderById(@PathVariable long orderId) {
-        return orderService.getOrdeById(orderId);
+    public OrderStatus getOrderStatusById(@PathVariable long orderId) {
+        return orderService.getOrderById(orderId).getStatus();
     }
 
     @PostMapping

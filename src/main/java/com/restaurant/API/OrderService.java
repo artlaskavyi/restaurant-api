@@ -11,7 +11,7 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public Order getOrdeById(long orderId) {
+    public Order getOrderById(long orderId) {
         return orderRepository.findById(orderId).orElse(null);
     }
 

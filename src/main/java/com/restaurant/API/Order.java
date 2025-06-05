@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 @Entity
 public class Order {
 
+    public Order() {}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,28 +28,10 @@ public class Order {
     @Column(length = 200)
     private String notes;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(nullable = false)
+    private OrderStatus status;
 
-    public String getName() {
-        return name;
+    public OrderStatus getStatus() {
+        return status;
     }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public LocalDateTime getOrderedAt() {
-        return orderedAt;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
 }
