@@ -1,4 +1,6 @@
 package com.restaurant.API;
 
-public class OrderStatus {
+public enum OrderStatus {
+    ORDERED,
+    DELIVERED,
 }
