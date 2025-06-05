@@ -11,14 +11,14 @@ public class OrderController {
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
-    @GetMapping("/{orderId}")
+    @GetMapping("/{orderId}/status")
     public OrderStatus getOrderStatusById(@PathVariable long orderId) {
-        return orderService.getOrderById(orderId).getStatus();
+        return orderService.getStatus(orderId);
     }
 
     @PostMapping
-    public Order createOrder(@RequestBody Order order) {
-        return orderService.createOrder(order);
+    public Order createOrder(@RequestBody OrderDTO orderDTO) {
+        return orderService.createOrder(orderDTO);
     }
 
 }

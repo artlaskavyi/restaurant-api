@@ -9,6 +9,14 @@ public class Order {
 
     public Order() {}
 
+    public Order(String name, Integer quantity, String address, LocalDateTime orderedAt, String notes) {
+        this.name = name;
+        this.quantity = quantity;
+        this.address = address;
+        this.orderedAt = orderedAt;
+        this.notes = notes;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,10 +36,8 @@ public class Order {
     @Column(length = 200)
     private String notes;
 
-    @Column(nullable = false)
-    private OrderStatus status;
-
-    public OrderStatus getStatus() {
-        return status;
+    public LocalDateTime getOrderedAt() {
+        return orderedAt;
     }
+
 }
