@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 public class OrderService {
@@ -33,7 +32,7 @@ public class OrderService {
         Order newOrder = new Order(
                 orderDTO.name(),
                 orderDTO.quantity(),
-                orderDTO.adress(),
+                orderDTO.address(),
                 LocalDateTime.now(),
                 orderDTO.notes()
         );
