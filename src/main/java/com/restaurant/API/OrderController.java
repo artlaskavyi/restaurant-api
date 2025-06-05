@@ -1,9 +1,6 @@
 package com.restaurant.API;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class OrderController {
@@ -16,6 +13,11 @@ public class OrderController {
     @GetMapping("/{orderId}")
     public Order getOrderById(@PathVariable long orderId) {
         return orderService.getOrdeById(orderId);
+    }
+
+    @PostMapping
+    public Order createOrder(@RequestBody Order order) {
+        return orderService.createOrder(order);
     }
 
 }
